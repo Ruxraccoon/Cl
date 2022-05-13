@@ -1,3 +1,29 @@
 body{
     background-color: rgb(49, 48, 48);
 }
+
+#divContainer{
+
+    color: white;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+    position: fixed;
+    height: 250px;
+    width: 100%;
+    align-items: center; 
+    justify-content: center;
+
+}
+
+/*#gridContainer{
+    display: grid;
+    grid-template-columns:repeat(10, 5px);
+    grid-template-rows: repeat(6, 5px);
+    grid-row-gap: 0px;
+}*/
+
+.hourItem{
+    min-width: 20px; min-height: 20px;
+    border: 0px solid
+}
