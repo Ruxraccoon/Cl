@@ -1,21 +1,39 @@
 function makeNumHour(){
-    var toAddHour = document.createDocumentFragment();
     for(var i=0; i<60; i++){
         var newDiv = document.createElement("div");
         newDiv.id = +i;
-        newDiv.className = "Hours";
-        toAdd.app(newDiv);
+        newDiv.className = "Hour";
+        newDiv.innerHTML = i
+        if (i < 10){
+            newDiv.innerHTML = "0"+i
+            console.log("add")
+            document.body.appendChild(newDiv)
+        }
+        else{
+            newDiv.innerHTML = i
+            document.body.appendChild(newDiv)
+            console.log("add")
+        }
     }
-    document.appendChild(toAddHour)
 }
 
 function makeNumMin(){
-    var toAddMin = document.createDocumentFragment();
     for(var i=0; i<60; i++){
         var newDiv = document.createElement("div");
         newDiv.id = +i;
         newDiv.className = "Min";
-        toAdd.app(newDiv);
+        if (i < 10){
+            newDiv.innerHTML = "0"+i
+            console.log("add")
+            document.body.appendChild(newDiv)
+        }
+        else{
+            newDiv.innerHTML = i
+            document.body.appendChild(newDiv)
+            console.log("add")
+        }
     }
-    document.appendChild(toAddMin)
 }
+
+makeNumHour()
+makeNumMin()
