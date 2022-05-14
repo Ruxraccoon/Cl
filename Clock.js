@@ -100,12 +100,12 @@ function updateTime(){
 }
 
 function opacitySet(ID){
-    //setInterval(function(){
+    setInterval(function(){
         for(var i=0; i<60; i++){
             document.getElementById(ID[i])
             .classList.add("opacity");
         }
-    //},1000)
+    },1000)
 }
 
 function changeColor(position){
@@ -192,12 +192,6 @@ makeNumMin()
 genHours()
 genMins()
 updateTime()
-if (sec===59){
-    opacitySet(mID)
-}
-if (min===59){
-    opacitySet(hID)
-}
 opacitySet(hID)
 opacitySet(mID)
 displayHour()
