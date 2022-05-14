@@ -96,8 +96,16 @@ function updateTime(){
             sec++;
             hour++
         }
-        console.log(min)
-    }, 10);
+    }, 1000);
+}
+
+function opacitySet(ID){
+    setInterval(function(){
+        for(var i=0; i<60; i++){
+            document.getElementById(ID[i])
+            .classList.add("opacity");
+        }
+    },1000)
 }
 
 function changeColor(position){
@@ -171,7 +179,10 @@ function displayMins(){
 function opacitySec(ID){
 
    setInterval(function(){
-
+       for(var i=0; i<sec; i++){
+        document.getElementById(ID[i])
+        .classList.remove("opacity");
+       }
    },1000)
 }
 
@@ -181,6 +192,10 @@ makeNumMin()
 genHours()
 genMins()
 updateTime()
+opacitySet(hID)
+opacitySet(mID)
 displayHour()
 displayMins()
+opacitySec(hID)
+opacitySec(mID)
 
