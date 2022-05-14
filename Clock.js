@@ -100,12 +100,12 @@ function updateTime(){
 }
 
 function opacitySet(ID){
-    setInterval(function(){
+    //setInterval(function(){
         for(var i=0; i<60; i++){
             document.getElementById(ID[i])
             .classList.add("opacity");
         }
-    },1000)
+    //},1000)
 }
 
 function changeColor(position){
@@ -176,10 +176,10 @@ function displayMins(){
     },1000)
 }
 
-function opacitySec(ID){
+function opacitySec(ID,time){
 
    setInterval(function(){
-       for(var i=0; i<sec; i++){
+       for(var i=0; i<time; i++){
         document.getElementById(ID[i])
         .classList.remove("opacity");
        }
@@ -192,10 +192,16 @@ makeNumMin()
 genHours()
 genMins()
 updateTime()
+if (sec===59){
+    opacitySet(mID)
+}
+if (min===59){
+    opacitySet(hID)
+}
 opacitySet(hID)
 opacitySet(mID)
 displayHour()
 displayMins()
-opacitySec(hID)
-opacitySec(mID)
+opacitySec(hID,min)
+opacitySec(mID,sec)
 
