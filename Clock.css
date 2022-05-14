@@ -50,6 +50,10 @@ body{
 
 }
 
-.colourChange1{
+.colorChange1{
     color: rgb(245, 178, 55);
+}
+
+.bold{
+    font-weight: bolder;
 }
