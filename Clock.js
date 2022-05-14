@@ -179,7 +179,7 @@ function displayMins(){
 function opacitySec(){
 
    setInterval(function(){
-       for(var i=0; i<sec; i++){
+       for(var i=0; i<sec+1; i++){
         document.getElementById(mID[i])
         .classList.remove("opacity");
        }
@@ -188,7 +188,7 @@ function opacitySec(){
 function opacityMin(){
 
     setInterval(function(){
-        for(var i=0; i<min; i++){
+        for(var i=0; i<min+1; i++){
          document.getElementById(hID[i])
          .classList.remove("opacity");
         }
