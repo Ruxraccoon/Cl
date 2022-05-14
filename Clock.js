@@ -194,7 +194,7 @@ function opacityMin(){
         }
     },1000)
  }
-
+ 
 genRemove()
 makeNumHour()
 makeNumMin()
