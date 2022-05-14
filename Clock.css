@@ -10,20 +10,42 @@ body{
     grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
     position: fixed;
     height: 250px;
-    width: 100%;
+    width: 45%;
+    float: left;
     align-items: center; 
     justify-content: center;
-
+    padding-top: 20%;
+    margin-left: 20px;
 }
 
-/*#gridContainer{
-    display: grid;
-    grid-template-columns:repeat(10, 5px);
-    grid-template-rows: repeat(6, 5px);
-    grid-row-gap: 0px;
-}*/
+#divContainer2{
 
-.hourItem{
-    min-width: 20px; min-height: 20px;
-    border: 0px solid
+    color: white;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+    position:sticky;
+    height: 250px;
+    width: 45%;
+    float:right;
+    align-items: center; 
+    justify-content: center;
+    padding-top: 20.4%;
+    margin-right: 20px;
+}
+
+#split{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    width: 9px;
+    height: 200px;
+    background: rgb(104, 102, 102);
+    border-radius: 40%;
+    position:fixed;
+    float: left;
+    top: 42%;
+    left: 48%;
+    box-shadow: 0 0 30px;
+
 }

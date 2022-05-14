@@ -1,4 +1,5 @@
 const divContainer = document.getElementById("divContainer");
+const divContainer2 = document.getElementById("divContainer2");
 
 function makeNumHour(){
     for(var i=0; i<60; i++){
@@ -22,21 +23,20 @@ function makeNumHour(){
 function makeNumMin(){
     for(var i=0; i<60; i++){
         var newDiv = document.createElement("div");
-        newDiv.id = "min"
-        newDiv.className = "m"+i;
-        newDiv.classList.add("gridContainer")
+        newDiv.id = "m"+i;
+        newDiv.className = "minItem";
         if (i < 10){
             newDiv.innerHTML = "0"+i
             console.log("add")
-            divContainer.appendChild(newDiv)
+            divContainer2.appendChild(newDiv)
         }
         else{
             newDiv.innerHTML = i
-            divContainer.appendChild(newDiv)
+            divContainer2.appendChild(newDiv)
             console.log("add")
         }
     }
 }
 
 makeNumHour()
-//makeNumMin()
+makeNumMin()
