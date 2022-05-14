@@ -188,7 +188,7 @@ function opacitySec(){
 function opacityMin(){
 
     setInterval(function(){
-        for(var i=0; i<min+2; i++){
+        for(var i=0; i<min+1; i++){
          document.getElementById(hID[i])
          .classList.remove("opacity");
         }
