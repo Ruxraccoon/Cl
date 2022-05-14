@@ -16,6 +16,8 @@ body{
     justify-content: center;
     padding-top: 20%;
     margin-left: 20px;
+    font-family:'Fredoka One', cursive;
+    font-size: 30px;
 }
 
 #divContainer2{
@@ -32,6 +34,8 @@ body{
     justify-content: center;
     padding-top: 20.4%;
     margin-right: 20px;
+    font-family:'Fredoka One', cursive;
+    font-size: 30px;
 }
 
 #split{
@@ -52,8 +56,9 @@ body{
 
 .colorChange1{
     color: rgb(245, 178, 55);
+    font-size: 35px;
 }
 
 .bold{
-    font-weight: bolder;
+    font-weight: bold;
 }
