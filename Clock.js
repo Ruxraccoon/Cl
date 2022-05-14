@@ -176,15 +176,24 @@ function displayMins(){
     },1000)
 }
 
-function opacitySec(ID,time){
+function opacitySec(){
 
    setInterval(function(){
-       for(var i=0; i<time; i++){
-        document.getElementById(ID[i])
+       for(var i=0; i<sec; i++){
+        document.getElementById(mID[i])
         .classList.remove("opacity");
        }
    },1000)
 }
+function opacityMin(){
+
+    setInterval(function(){
+        for(var i=0; i<min; i++){
+         document.getElementById(hID[i])
+         .classList.remove("opacity");
+        }
+    },1000)
+ }
 
 genRemove()
 makeNumHour()
@@ -196,6 +205,7 @@ opacitySet(hID)
 opacitySet(mID)
 displayHour()
 displayMins()
-opacitySec(hID,min)
-opacitySec(mID,sec)
+opacitySec()
+opacityMin()
+
 
