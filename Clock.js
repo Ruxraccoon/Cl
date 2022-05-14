@@ -2,6 +2,7 @@ const divContainer = document.getElementById("divContainer");
 const divContainer2 = document.getElementById("divContainer2");
 var hID = [];
 var mID = [];
+var removeNum = []
 var zeroNums = [1,2,3,11,13,21,23,31,33,41,43,51,52,53];
 var oneNums = [1,2,12,22,32,42,51,52,53];
 var twoNums = [1,2,3,13,23,22,21,31,41,51,52,53];
@@ -19,11 +20,16 @@ let hour = getTime.getHours();
 let min = getTime.getMinutes();
 let sec = getTime.getSeconds();
 
+function genRemove(){
+    for(var i=0; i<60; i++){
+        removeNum.push(i)
+    }
+}
+
 function makeNumHour(){
     for(var i=0; i<60; i++){
         var newDiv = document.createElement("div");
         newDiv.id = "h"+i;
-        newDiv.className = "hourItem";
         newDiv.innerHTML = i
         if (i < 10){
             newDiv.innerHTML = "0"+i
@@ -42,7 +48,6 @@ function makeNumMin(){
     for(var i=0; i<60; i++){
         var newDiv = document.createElement("div");
         newDiv.id = "m"+i;
-        newDiv.className = "minItem";
         if (i < 10){
             newDiv.innerHTML = "0"+i
             divContainer2.appendChild(newDiv)
@@ -92,7 +97,7 @@ function updateTime(){
             hour++
         }
         console.log(min)
-    }, 1000);
+    }, 10);
 }
 
 function changeColor(position){
@@ -102,11 +107,19 @@ function changeColor(position){
     .classList.add("bold");
 }
 
-function clean(){
-    document.getElementById("divContainer")
+function remove(position){
+    document.getElementById(position)
     .classList.remove("colorChange1");
-    document.getElementById("divContainer")
-    .classList.remove("bold");
+    document.getElementById(position)
+    .classList.remove("bold")
+}
+
+function reset(ID){
+    var length = removeNum.length
+
+    for (var i=0; i<length; i++){
+        remove(ID[removeNum[i]])
+    }
 }
 
 function draw(position,NumArray,ID){
@@ -126,13 +139,14 @@ function draw(position,NumArray,ID){
 function displayHour(){
 
     setInterval(function(){
+        reset(hID)
         if(hour<10){
             draw(0,zeroNums,hID)
             draw(1,numDic[hour],hID)
         }
-        else if(hour>9){
+        else{
             var digits = (""+hour).split("");
-            draw(0,oneNums,hID)
+            draw(0,numDic[digits[0]],hID)
             draw(1,numDic[digits[1]],hID)
         }
     },1000)
@@ -141,18 +155,27 @@ function displayHour(){
 function displayMins(){
 
     setInterval(function(){
+        reset(mID)
         if(min<10){
             draw(0,zeroNums,mID)
             draw(1,numDic[min],mID)
+            reset(numDic[0])
+            reset(numDic[min])
         }
-        else if(min>9){
-            var digits = (""+min).split("");
-            draw(0,numDic[digits[0]],mID)
-            draw(1,numDic[digits[1]],mID)
-        }
+        var digits = (""+min).split("");
+        draw(0,numDic[digits[0]],mID)
+        draw(1,numDic[digits[1]],mID)
     },1000)
 }
 
+function opacitySec(ID){
+
+   setInterval(function(){
+
+   },1000)
+}
+
+genRemove()
 makeNumHour()
 makeNumMin()
 genHours()
