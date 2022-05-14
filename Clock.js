@@ -107,23 +107,23 @@ function clean(){
     .classList.remove("bold");
 }
 
-function draw(position,NumArray){
+function draw(position,NumArray,ID){
     var length = NumArray.length
     if (position === 0 ){
         for (var i=0; i<length; i++){
-            changeColor(hID[NumArray[i]])
+            changeColor(ID[NumArray[i]])
         }
     }
     else{
         for (var i=0; i<length; i++){
-            changeColor(hID[NumArray[i]+5])
+            changeColor(ID[NumArray[i]+5])
         }
     }
 }
 
-
-
 makeNumHour()
 makeNumMin()
 genHours()
+genMins()
 updateTime()
+draw(0,sevenNums,hID)
