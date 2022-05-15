@@ -10,9 +10,9 @@ body{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
-    position: fixed;
+    position: sticky;
     height: 250px;
-    width: 45%;
+    width: 45;
     float: left;
     align-items: center; 
     justify-content: center;
@@ -30,7 +30,7 @@ body{
     grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
     position:sticky;
     height: 250px;
-    width: 45%;
+    width: 45;
     float:right;
     align-items: center; 
     justify-content: center;
@@ -70,3 +70,4 @@ body{
 .bold{
     font-weight: bold;
 }
+
