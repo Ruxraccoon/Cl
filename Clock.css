@@ -5,43 +5,14 @@ body{
 }
 
 #divContainer{
-
-    color: white;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
-    position: sticky;
-    height: 250px;
-    width: 45;
-    float: left;
-    align-items: center; 
-    justify-content: center;
-    padding-top: 20%;
-    margin-left: 20px;
-    font-family:'Fredoka One', cursive;
     padding-left: 25%;
-    font-size: 30px;
+    float:left;
 }
 
 #divContainer2{
-
-    color: white;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
-    position:sticky;
-    height: 250px;
-    width: 45;
-    float:right;
-    align-items: center; 
-    justify-content: center;
-    padding-top: 20%;
-    margin-right: 20px;
-    font-family:'Fredoka One', cursive;
     padding-right: 25%;
-    font-size: 30px;
-    
-}
+    float:right;
+} 
 
 #split{
     display: grid;
@@ -73,3 +44,18 @@ body{
     font-weight: bold;
 }
 
+.grid{
+    color: white;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+    position:sticky;
+    height: 250px;
+    width: 45;
+    align-items: center; 
+    justify-content: center;
+    padding-top: 20%;
+    margin-right: 20px;
+    font-family:'Fredoka One', cursive;
+    font-size: 30px;
+}
