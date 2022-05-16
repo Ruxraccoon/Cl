@@ -14,22 +14,6 @@ body{
     float:right;
 } 
 
-#split{
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: 1fr;
-    width: 9px;
-    height: 200px;
-    background: rgb(104, 102, 102);
-    border-radius: 40%;
-    position:fixed;
-    float: left;
-    top: 42%;
-    left: 48%;
-    box-shadow: 0 0 30px;
-
-}
-
 .opacity{
     opacity: 0.7;
 }
