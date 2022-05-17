@@ -26,7 +26,7 @@ function genRemove(){
     }
 }
 
-function makeNum(IDprefix, Container){
+function makeNum(IDprefix, container){
     for(var i=0; i<60; i++){
         var newDiv = document.createElement("div");
         newDiv.id = IDprefix+i;
@@ -34,11 +34,11 @@ function makeNum(IDprefix, Container){
         if (i < 10){
             newDiv.innerHTML = "0"+i
             console.log("add")
-            Container.appendChild(newDiv)
+            container.appendChild(newDiv)
         }
         else{
             newDiv.innerHTML = i
-            Container.appendChild(newDiv)
+            container.appendChild(newDiv)
             console.log("add")
         }
     }
@@ -104,16 +104,16 @@ function reset(ID){
     }
 }
 
-function draw(position,NumArray,ID){
-    var length = NumArray.length
+function draw(position,numArray,ID){
+    var length = numArray.length
     if (position === 0 ){
         for (var i=0; i<length; i++){
-            changeColor(ID[NumArray[i]])
+            changeColor(ID[numArray[i]])
         }
     }
     else{
         for (var i=0; i<length; i++){
-            changeColor(ID[NumArray[i]+5])
+            changeColor(ID[numArray[i]+5])
         }
     }
 }
