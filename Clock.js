@@ -26,50 +26,28 @@ function genRemove(){
     }
 }
 
-function makeNumHour(){
+function makeNum(IDprefix, Container){
     for(var i=0; i<60; i++){
         var newDiv = document.createElement("div");
-        newDiv.id = "h"+i;
+        newDiv.id = IDprefix+i;
         newDiv.innerHTML = i
         if (i < 10){
             newDiv.innerHTML = "0"+i
             console.log("add")
-            divContainer.appendChild(newDiv)
+            Container.appendChild(newDiv)
         }
         else{
             newDiv.innerHTML = i
-            divContainer.appendChild(newDiv)
+            Container.appendChild(newDiv)
             console.log("add")
         }
     }
 }
 
-function makeNumMin(){
+function genDictionarys(IDdic, IDprefix){
     for(var i=0; i<60; i++){
-        var newDiv = document.createElement("div");
-        newDiv.id = "m"+i;
-        if (i < 10){
-            newDiv.innerHTML = "0"+i
-            divContainer2.appendChild(newDiv)
-        }
-        else{
-            newDiv.innerHTML = i
-            divContainer2.appendChild(newDiv)
-        }
-    }
-}
-
-function genHours(){
-    for(var i=0; i<60; i++){
-        var newID = "h"+i;
-        hID.push(newID);
-    }
-}
-
-function genMins(){
-    for(var i=0; i<60; i++){
-        var newID = "m"+i;
-        mID.push(newID);
+        var newID = IDprefix+i;
+        IDdic.push(newID);
     }
 }
 
@@ -184,10 +162,10 @@ function opacityMin(){
 
  function genVars(){
     genRemove()
-    makeNumHour()
-    makeNumMin()
-    genHours()
-    genMins()
+    makeNum("h",divContainer)
+    makeNum("m",divContainer2)
+    genDictionarys(hID, "h")
+    genDictionarys(mID, "m")
  }
 
  function intervalFunctions(){
@@ -204,6 +182,3 @@ function opacityMin(){
  
 genVars()
 intervalFunctions()
-
-
-
