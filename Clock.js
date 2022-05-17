@@ -118,47 +118,27 @@ function draw(position,numArray,ID){
     }
 }
 
-function displayHour(){
+function displayTime(ID,time){
 
-        reset(hID)
-        if(hour<10){
-            draw(0,zeroNums,hID)
-            draw(1,numDic[hour],hID)
+        reset(ID)
+        if(time<10){
+            draw(0,zeroNums,ID)
+            draw(1,numDic[time],ID)
         }
         else{
-            var digits = (""+hour).split("");
-            draw(0,numDic[digits[0]],hID)
-            draw(1,numDic[digits[1]],hID)
+            var digits = (""+time).split("");
+            draw(0,numDic[digits[0]],ID)
+            draw(1,numDic[digits[1]],ID)
         }
 }
 
-function displayMins(){
+function opacityBackNums(ID,time){
 
-        reset(mID)
-        if(min<10){
-            draw(0,zeroNums,mID)
-            draw(1,numDic[min],mID)
-            reset(numDic[0])
-            reset(numDic[min])
-        }
-        var digits = (""+min).split("");
-        draw(0,numDic[digits[0]],mID)
-        draw(1,numDic[digits[1]],mID)
-}
-
-function opacitySec(){
-
-       for(var i=0; i<sec+1; i++){
-        document.getElementById(mID[i])
+       for(var i=0; i<time+1; i++){
+        document.getElementById(ID[i])
         .classList.remove("opacity");
        }
 }
-function opacityMin(){
-        for(var i=0; i<min+1; i++){
-         document.getElementById(hID[i])
-         .classList.remove("opacity")
-        }
- }
 
  function genVars(){
     genRemove()
@@ -173,10 +153,10 @@ function opacityMin(){
         updateTime()
         opacitySet(hID)
         opacitySet(mID)
-        displayHour()
-        displayMins()
-        opacitySec()
-        opacityMin()
+        displayTime(hID,hour)
+        displayTime(mID,min)
+        opacityBackNums(hID,min)
+        opacityBackNums(mID,sec)
     },1000)
  }
  
