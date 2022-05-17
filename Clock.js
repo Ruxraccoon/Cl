@@ -44,7 +44,7 @@ function makeNum(IDprefix, Container){
     }
 }
 
-function genDictionarys(IDdic, IDprefix){
+function genDictionarys(IDprefix, IDdic){
     for(var i=0; i<60; i++){
         var newID = IDprefix+i;
         IDdic.push(newID);
@@ -164,8 +164,8 @@ function opacityMin(){
     genRemove()
     makeNum("h",divContainer)
     makeNum("m",divContainer2)
-    genDictionarys(hID, "h")
-    genDictionarys(mID, "m")
+    genDictionarys("h", hID)
+    genDictionarys("m", mID)
  }
 
  function intervalFunctions(){
