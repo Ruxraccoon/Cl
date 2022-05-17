@@ -74,7 +74,6 @@ function genMins(){
 }
 
 function updateTime(){
-    setInterval(function(){
 
         if (sec <59){
             sec ++;
@@ -96,16 +95,13 @@ function updateTime(){
             sec++;
             hour++
         }
-    }, 1000);
 }
 
 function opacitySet(ID){
-    setInterval(function(){
         for(var i=0; i<60; i++){
             document.getElementById(ID[i])
             .classList.add("opacity");
         }
-    },1000)
 }
 
 function changeColor(position){
@@ -146,7 +142,6 @@ function draw(position,NumArray,ID){
 
 function displayHour(){
 
-    setInterval(function(){
         reset(hID)
         if(hour<10){
             draw(0,zeroNums,hID)
@@ -157,12 +152,10 @@ function displayHour(){
             draw(0,numDic[digits[0]],hID)
             draw(1,numDic[digits[1]],hID)
         }
-    },1000)
 }
 
 function displayMins(){
 
-    setInterval(function(){
         reset(mID)
         if(min<10){
             draw(0,zeroNums,mID)
@@ -173,39 +166,44 @@ function displayMins(){
         var digits = (""+min).split("");
         draw(0,numDic[digits[0]],mID)
         draw(1,numDic[digits[1]],mID)
-    },1000)
 }
 
 function opacitySec(){
 
-   setInterval(function(){
        for(var i=0; i<sec+1; i++){
         document.getElementById(mID[i])
         .classList.remove("opacity");
        }
-   },1000)
 }
 function opacityMin(){
-
-    setInterval(function(){
         for(var i=0; i<min+1; i++){
          document.getElementById(hID[i])
-         .classList.remove("opacity");
+         .classList.remove("opacity")
         }
+ }
+
+ function genVars(){
+    genRemove()
+    makeNumHour()
+    makeNumMin()
+    genHours()
+    genMins()
+ }
+
+ function intervalFunctions(){
+    setInterval (function(){
+        updateTime()
+        opacitySet(hID)
+        opacitySet(mID)
+        displayHour()
+        displayMins()
+        opacitySec()
+        opacityMin()
     },1000)
  }
  
-genRemove()
-makeNumHour()
-makeNumMin()
-genHours()
-genMins()
-updateTime()
-opacitySet(hID)
-opacitySet(mID)
-displayHour()
-displayMins()
-opacitySec()
-opacityMin()
+genVars()
+intervalFunctions()
+
 
 
