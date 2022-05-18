@@ -60,13 +60,13 @@ function updateTime(){
             min++
             sec = 00
         }
-        else if (min > 58 && hour <12){
+        else if (min > 58 && hour <24){
             min = 0;
             sec = 0;
             sec++;
             hour++
         }
-        else if(hour === 12 && min === 59){
+        else if(hour === 24 && min === 59 && sec === 59){
             hour = 0;
             min = 0;
             sec = 0;
